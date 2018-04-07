@@ -19,16 +19,14 @@
   font-style: normal;
 }
 
-.img-test {
-  position: absolute;
-  top: 0;
-  height: auto;
-  /*width: 100%;*/
-  opacity: 0.5;
-  /*left: 320px;*/
-  z-index: 1000;
-  width: 1920px;
-}
+/*.img-test {*/
+  /*position: absolute;*/
+  /*top: 0;*/
+  /*height: auto;*/
+  /*opacity: 0.5;*/
+  /*z-index: 1000;*/
+  /*width: 1920px;*/
+/*}*/
 
 * {
   box-sizing: border-box;
@@ -60,14 +58,23 @@ html {
 
 h2,
 h3,
-.header-refs p,
-.footer-refs p,
+.header-content,
+.header-refs span,
+.footer-refs span,
 .footer-content {
   text-transform: uppercase;
 }
 
-h3 {
+h3,
+.header-content,
+.footer-content .one {
   font-weight: bold;
+}
+
+.header-content,
+.footer-content {
+  display: flex;
+  flex-direction: column;
 }
 
 .surface-text g,
@@ -82,12 +89,20 @@ h3 {
 }
 
 .main-header,
-.header-refs p,
-.footer-refs p,
+.header-refs span,
+.footer-refs span,
 .athlets-content.three .text-content,
 .players-content.three .text-content,
 .footer-content .one {
   color: #ffffff;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
 }
 
 .header-buttons {
@@ -175,18 +190,13 @@ footer {
   text-align: right;
 }
 
-.header-refs .text,
-.footer-refs .text {
-  margin-top: 2px;
-}
-
-.header-refs p.one,
-.footer-refs p.one {
+.header-refs span.one,
+.footer-refs span.one {
   font-weight: normal;
 }
 
-.header-refs p.two,
-.footer-refs p.two {
+.header-refs span.two,
+.footer-refs span.two {
   font-weight: bold;
 }
 
@@ -229,7 +239,9 @@ footer {
 }
 
 .athlets-content .number-rectangle,
-.players-content .number-rectangle {
+.players-content .number-rectangle,
+.header-refs .text,
+.footer-refs .text {
   display: flex;
   flex-direction: column;
 }
@@ -281,7 +293,9 @@ footer .footer-surface {
     letter-spacing: 0.05rem;
   }
 
-  h3 {
+  h3,
+  .header-content,
+  .footer-content .one {
     line-height: 3.35rem;
     letter-spacing: 0.13rem;
     font-size: 2.8rem;
@@ -306,7 +320,7 @@ footer .footer-surface {
   }
 
   .main-header .header-content {
-    margin-top: 40%;
+    margin-top: 40.4%;
   }
 
   .main-header .header-content .one {
@@ -314,7 +328,7 @@ footer .footer-surface {
   }
 
   .main-header .header-content .two {
-    margin-top: 6%;
+    margin-top: 19px;
     margin-left: 20%;
   }
 
@@ -350,8 +364,8 @@ footer .footer-surface {
     letter-spacing: 0.05rem;
   }
 
-  .header-refs p,
-  .footer-refs p {
+  .header-refs span,
+  .footer-refs span {
     font-size: 8px;
   }
 
@@ -392,7 +406,7 @@ footer .footer-surface {
   }
 
   .players-content.one .content {
-    padding-top: 76px;
+    padding-top: 73px;
   }
 
   .athlets-content.two,
@@ -480,12 +494,12 @@ footer .footer-surface {
 
   .last-content-text.two {
     padding-top: 26px;
-    padding-bottom: 77px;
+    padding-bottom: 78px;
   }
 
   .last-content-text.three {
     padding-top: 26px;
-    padding-bottom: 65px;
+    padding-bottom: 66px;
   }
 
   .last-content-text h3 {
@@ -529,9 +543,13 @@ footer .footer-surface {
     height: 48px;
   }
 
+  .footer-content {
+    margin-top: 16.5%;
+  }
+
   .footer-content .one {
     font-size: 3.2rem;
-    margin-top: 16.5%;
+    letter-spacing: 0.15rem;
   }
 
   .footer-content .two {
@@ -553,13 +571,9 @@ footer .footer-surface {
 
 @media (min-width: 641px) and (max-width: 960px) {
 
-  /*.wrapper {*/
-    /*min-width: 768px;*/
-  /*}*/
-
   .main-header {
     background-image: url("../images/header-background-768.png");
-    padding-bottom: 12%;
+    padding-bottom: 11.8%;
   }
 
   h2 {
@@ -567,7 +581,8 @@ footer .footer-surface {
     letter-spacing: 0.1rem;
   }
 
-  h3 {
+  h3,
+  .header-content {
     line-height: 7.7rem;
     letter-spacing: 0.35rem;
     font-size: 6.4rem;
@@ -591,13 +606,14 @@ footer .footer-surface {
 
   .main-header .header-content .two {
     margin-left: 25%;
+    margin-top: 2px;
   }
 
   .header-refs,
   .footer-refs {
     width: 650px;
     height: 76px;
-    margin: 39.25% auto 0 auto;
+    margin: 39.1% auto 0 auto;
   }
 
   .apple,
@@ -649,18 +665,17 @@ footer .footer-surface {
   .athlets-content.one .content,
   .players-content.one .content {
     padding-top: 9px;
-    padding-bottom: 39px;
+    padding-bottom: 66px;
   }
 
   .players-content.one .content {
     padding-top: 11px;
-    padding-bottom: 41px;
+    padding-bottom: 38px;
   }
 
-  .athlets-content.two,
-  .players-content.two {
+  .athlets-content.two {
     padding-top: 12px;
-    padding-bottom: 33px;
+    padding-bottom: 32px;
   }
 
   .players-content.two {
@@ -687,7 +702,7 @@ footer .footer-surface {
   .athlets-content h3,
   .players-content h3,
   .last-content h3 {
-    font-size: 32px;
+    font-size: 3.2rem;
     letter-spacing: 0.15rem;
   }
 
@@ -730,7 +745,7 @@ footer .footer-surface {
 
   .last-content-text {
     padding-top: 75px;
-    padding-bottom: 101px;
+    padding-bottom: 99px;
   }
 
   .last-content-text .number-rectangle {
@@ -752,7 +767,7 @@ footer .footer-surface {
 
   .last-content-text.three {
     padding-top: 66px;
-    padding-bottom: 115px;
+    padding-bottom: 113px;
   }
 
   .last-content-text h3 {
@@ -793,13 +808,13 @@ footer .footer-surface {
     padding-left: 18px;
   }
 
-  .footer-content .one {
-    margin-top: 9.2%;
+  .footer-content {
+    margin-top: 7%;
   }
 
   .footer-content .two {
     font-size: 3.6rem;
-    margin-top: 10px;
+    margin-top: -4px;
     letter-spacing: 0.01rem;
   }
 
@@ -808,7 +823,7 @@ footer .footer-surface {
   }
 
   .footer-surface-text {
-    margin: 7.5% auto 0 auto;
+    margin: 7.3% auto 0 auto;
     padding-left: 4px;
     padding-right: 6px;
   }
@@ -850,7 +865,8 @@ footer .footer-surface {
     letter-spacing: 0.1rem;
   }
 
-  h3 {
+  h3,
+  .header-content {
     line-height: 9.4rem;
     letter-spacing: 0.5rem;
     font-size: 9rem;
@@ -935,7 +951,7 @@ footer .footer-surface {
   .players-content.two,
   .players-content.three {
     padding-left: 15.9%;
-    padding-right: 50%;
+    padding-right: 30%;
   }
 
   .athlets-content.one .content,
@@ -979,7 +995,7 @@ footer .footer-surface {
   .athlets-content h3,
   .players-content h3,
   .last-content h3 {
-    font-size: 36px;
+    font-size: 3.6rem;
     letter-spacing: 0.19rem;
     width: 90%
   }
@@ -1005,7 +1021,7 @@ footer .footer-surface {
 
   .players-content .text-content {
     padding-left: 20px;
-    padding-right: 10px;
+    padding-right: 40%;
   }
 
   .players-content.one {
@@ -1141,7 +1157,7 @@ footer .footer-surface {
   }
 
   footer {
-    padding-bottom: 2.3%;
+    padding-bottom: 2.4%;
   }
 
   footer:after {
@@ -1152,7 +1168,7 @@ footer .footer-surface {
 
   .footer-flex-wrapper {
     display: flex;
-    margin-top: 11.95%;
+    margin-top: 11.9%;
   }
 
   .footer-surface-flex {
@@ -1170,6 +1186,7 @@ footer .footer-surface {
     width: 67%;
     text-align: left;
     padding-right: 40px;
+    margin-top: -5px;
   }
 
   .footer-content .one {
@@ -1178,7 +1195,7 @@ footer .footer-surface {
 
   .footer-content .two {
     font-size: 3rem;
-    margin-top: -3px;
+    margin-top: -12px;
     padding-left: 33px;
     letter-spacing: 0.02rem;
   }
@@ -1337,7 +1354,6 @@ footer .footer-surface {
 
   .header-refs .text,
   .footer-refs .text {
-    margin-top: 2px;
     width: 66%;
     letter-spacing: 0.06rem;
   }
@@ -1347,15 +1363,15 @@ footer .footer-surface {
     width: 59.5%;
   }
 
-  .header-refs p,
-  .footer-refs p {
-    font-size: 14px;
+  .header-refs span,
+  .footer-refs span {
+    font-size: 1.4rem;
     margin-left: -2px;
   }
 
-  .header-refs p.two,
-  .footer-refs p.two {
-    margin-top: -2px;
+  .header-refs span.two,
+  .footer-refs span.two {
+    margin-top: -3px;
   }
 
   .athlets-content .number-rectangle,
@@ -1370,7 +1386,7 @@ footer .footer-surface {
   }
 
   .last-content-text h3 {
-    font-size: 80px;
+    font-size: 8rem;
     opacity: 0.4;
     letter-spacing: 0.01rem;
   }
@@ -1396,6 +1412,25 @@ footer .footer-surface {
 
 }
 
+@media (min-width: 960px) and (max-width: 1400px) {
+
+  .last-content-text h3 {
+    line-height: 5.7rem;
+    letter-spacing: 0.35rem;
+    font-size: 5rem;
+    padding-left: 10%;
+  }
+
+  .last-content-text.two h3 {
+    padding-right: 10%;
+  }
+
+  .last-content-text.one .text-content {
+    margin-top: 80px;
+  }
+
+}
+
 /*firefox хак*/
 @media (max-width: 640px) {
 
@@ -1417,6 +1452,10 @@ footer .footer-surface {
       padding-bottom: 52px;
     }
 
+    .last-content-text.two {
+      padding-bottom: 77px;
+    }
+
     .footer-refs {
       margin: 22% auto 0 auto;
     }
@@ -1434,8 +1473,17 @@ footer .footer-surface {
     padding-top: 48px;
   }
 
-  .players-content.three {
+  .players-content.one .content {
+    padding-top: 75px;
+    padding-bottom: 47px;
+  }
+
+  .players-content.two {
     padding-bottom: 52px;
+  }
+
+  .players-content.three {
+    padding-bottom: 54px;
   }
 
   .last-content-text.two {
@@ -1466,16 +1514,16 @@ footer .footer-surface {
 
   @-moz-document url-prefix() {
 
-    .athlets-content.one .content {
-      padding-bottom: 36px;
-    }
-
     .athlets-content.two {
       padding-bottom: 32px;
     }
 
     .athlets-content.three {
       padding-bottom: 56px;
+    }
+
+    .players-content.one .content {
+      padding-bottom: 41px;
     }
 
     .players-content.two {
@@ -1505,8 +1553,8 @@ footer .footer-surface {
 /*IE хак*/
 @media all and (-ms-high-contrast:none) and (min-width: 641px) and (max-width: 960px) {
 
-  .header-refs {
-    margin: 39.5% auto 0 auto;
+  h2 {
+    letter-spacing: 0.01rem;
   }
 
   .header-refs .apple svg,
@@ -1519,18 +1567,22 @@ footer .footer-surface {
     margin-left: 14px;
   }
 
-  .athlets-content.three {
-    padding-bottom: 59px;
+  .athlets-content.one h2 {
+    margin-top: 58px;
   }
 
-  .athlets-content.one .content {
-    padding-bottom: 39px;
+  .athlets-content.three {
+    padding-bottom: 59px;
   }
 
   .athlets-content .text-content,
   .players-content .text-content,
   .last-content .text-content {
     letter-spacing: 0.09rem;
+  }
+
+  .players-content.one .content {
+    padding-bottom: 40px;
   }
 
   .players-content.two {
@@ -1576,6 +1628,11 @@ footer .footer-surface {
 
     .athlets-content.one .content {
       padding-bottom: 53px;
+    }
+
+    .athlets-content.one .text-content,
+    .athlets-content.three .text-content {
+      margin-top: -10px;
     }
 
     .athlets-content.two {
