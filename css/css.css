@@ -127,8 +127,11 @@ h3,
   background-color: #8E7EB0;
 }
 
+.main-header,
+.athlets,
 .players,
-.last-content {
+.last-content,
+footer {
   overflow: hidden;
 }
 
