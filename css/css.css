@@ -127,6 +127,10 @@ h3,
   background-color: #8E7EB0;
 }
 
+.players {
+  overflow: hidden;
+}
+
 .main-header,
 footer {
   width: 100%;
@@ -998,6 +1002,10 @@ footer .footer-surface {
     font-size: 3.6rem;
     letter-spacing: 0.19rem;
     width: 90%
+  }
+
+  .athlets-content h3 {
+    width: 80%;
   }
 
   .athlets-content .text-content,
